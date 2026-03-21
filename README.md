@@ -1,6 +1,6 @@
 # LYRA - Herramienta OSINT para investigadores
 
-[![Version](https://img.shields.io/badge/version-1.0-red)](https://github.com/tu-usuario/LYRA)
+[![Version](https://img.shields.io/badge/version-1.0-red)](https://github.com/Condor2026/Lyra_)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8+-green)](https://python.org)
 [![OSINT](https://img.shields.io/badge/OSINT-Pasivo%20%7C%20Analítico-blueviolet)](https://es.wikipedia.org/wiki/OSINT)
@@ -116,120 +116,9 @@ LYRA automatiza la búsqueda de información pública disponible en internet, pe
 #### 📱 Opción 1: En Termux (Android)
 
 ```bash
-# Actualizar paquetes e instalar Python y git
 pkg update && pkg upgrade -y
 pkg install python git -y
-
-# Instalar dependencias Python
 pip install requests phonenumbers whois dnspython
-
-# Clonar el repositorio
-git clone https://github.com/tu-usuario/LYRA.git
-cd LYRA
-
-# Ejecutar la herramienta
+git clone https://github.com/Condor2026/Lyra_.git
+cd Lyra_
 python lyra.py
-```
-
-🐧 Opción 2: En Linux (Debian/Ubuntu y derivados)
-
-```bash
-# Actualizar repositorios e instalar Python3, pip y git
-sudo apt update
-sudo apt install python3 python3-pip git -y
-
-# Instalar dependencias Python
-pip3 install requests phonenumbers whois dnspython
-
-# Clonar el repositorio
-git clone https://github.com/tu-usuario/LYRA.git
-cd LYRA
-
-# Ejecutar la herramienta
-python3 lyra.py
-```
-
-📦 Opción 3: Instalación manual con requirements.txt (cualquier sistema)
-
-```bash
-git clone https://github.com/tu-usuario/LYRA.git
-cd LYRA
-pip install -r requirements.txt
-python lyra.py
-```
-
-💡 Nota: Si prefieres usar python3 en lugar de python, ajusta el comando según tu sistema.
-
----
-
-🖥️ Modo terminal (10 comandos)
-
-Al ejecutar lyra.py aparece un menú con las siguientes opciones:
-
-```
-╔════════════════════════════════════════════════════╗
-║           M E N Ú   P R I N C I P A L              ║
-╚════════════════════════════════════════════════════╝
-[1] 📱 TODO SOBRE UN TELÉFONO
-[2] 📧 TODO SOBRE UN EMAIL
-[3] 🌐 IP Tracker
-[4] 👤 USERNAME TRACKER MASIVO (300+ sitios)
-[5] 🌍 Ver mi IP
-[6] 🛡️  SPAM BLOCKER (defensa)
-[7] 🖼️  Búsqueda inversa de imágenes
-[8] 🔍 Escaneo de puertos
-[9] 📋 WHOIS de dominio mejorado
-[10] 🔬 Herramientas profesionales (Maigret/Sherlock)
-[0] Salir
-```
-
-Cada opción ejecuta la acción correspondiente y muestra los resultados en la terminal.
-
----
-
-⚙️ Configuración opcional
-
-Edita las variables al principio de lyra.py:
-
-· IPQS_API_KEY: para análisis de riesgo VoIP/fraude. Obtén una clave gratuita en ipqualityscore.com.
-· (Opcional) Si deseas añadir tu propio bot de Telegram para consultar dumps propios, puedes descomentar y rellenar BOT_TOKEN y CHAT_ID (aunque en la versión ética pública no se incluye).
-
-No subas tus claves al repositorio. Déjalas vacías en el código y explica cómo obtenerlas.
-
----
-
-⚖️ Ética, legalidad y protección de datos
-
-LYRA está diseñada exclusivamente para fines educativos y de investigación legítima. No realiza ataques activos, no almacena datos personales y consulta únicamente información pública. Cumple con el espíritu de la normativa europea GDPR al no recopilar ni tratar datos de forma indebida.
-
-⚠️ ADVERTENCIA LEGAL
-Esta herramienta es exclusivamente para fines educativos y de investigación legítima.
-No debe utilizarse para acosar, doxear, realizar actividades ilegales o violar la privacidad de las personas.
-El autor no se responsabiliza del mal uso. El usuario es el único responsable de cumplir con las leyes de su país.
-
----
-
-🤝 Contribuciones y futuro
-
-Las contribuciones son bienvenidas. Puedes:
-
-· Reportar errores en Issues.
-· Mejorar la lista de plataformas para username.
-· Añadir nuevas APIs de OSINT (por ejemplo, hunter.io para emails, shodan para IPs).
-· Incorporar más herramientas profesionales.
-· Mejorar la documentación.
-
----
-
-📜 Licencia
-
-Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
-
----
-
-🙏 Agradecimientos
-
-· Librerías: phonenumbers, requests, whois, dnspython.
-· API: ipwho.is, spamcalls.net, haveibeenpwned.com, ipqualityscore.com.
-· Inspiración: Sherlock, Maigret, OSINT Framework.
-
