@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Archivos de reportes generados
+report_maigret.html
+*.log
+
+# Configuración personal (no subas tus claves)
+config.py
+*.key
+*.token
+
+# Directorios de herramientas clonadas
+sherlock/
+SpamBlocker/
+
+# Archivos temporales
+*.swp
+*.swo
+*.tmp
