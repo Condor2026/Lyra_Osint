@@ -1,6 +1,6 @@
 # LYRA - Herramienta OSINT para investigadores
 
-[![Version](https://img.shields.io/badge/version-1.0-red)](https://github.com/Condor2026/Lyra_)
+[![Version](https://img.shields.io/badge/version-1.0-red)](https://github.com/Condor2026/Lyra_Osint)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8+-green)](https://python.org)
 [![OSINT](https://img.shields.io/badge/OSINT-Pasivo%20%7C%20Analítico-blueviolet)](https://es.wikipedia.org/wiki/OSINT)
@@ -119,6 +119,6 @@ LYRA automatiza la búsqueda de información pública disponible en internet, pe
 pkg update && pkg upgrade -y
 pkg install python git -y
 pip install requests phonenumbers whois dnspython
-git clone https://github.com/Condor2026/Lyra_.git
-cd Lyra_
+git clone https://github.com/Condor2026/Lyra_Osint.git
+cd Lyra_Osint
 python lyra.py
