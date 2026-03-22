@@ -121,4 +121,4 @@ pkg install python git -y
 pip install requests phonenumbers whois dnspython
 git clone https://github.com/Condor2026/Lyra_Osint.git
 cd Lyra_Osint
-python lyra.py
+python Lyra_Osint.py
