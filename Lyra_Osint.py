@@ -1,7 +1,23 @@
 #!/usr/bin/python
 # ==========================================================
 # LYRA PRO - Herramienta OSINT para investigadores profesionales
-# Versión Ética Avanzada - Top Tier (CORREGIDA)
+# Versión Ética Avanzada - Top Tier
+# ==========================================================
+# DISCLAIMER ÉTICO:
+# Esta herramienta está diseñada EXCLUSIVAMENTE para:
+# - Investigaciones de seguridad autorizadas
+# - Periodismo de investigación legítimo
+# - Verificación de identidad en casos de fraude
+# - Búsqueda de personas desaparecidas (con autorización)
+# - Estudios académicos de ciberseguridad
+#
+# PROHIBIDO:
+# - Acoso, doxing o vigilancia no consensuada
+# - Violación de privacidad
+# - Actividades ilegales de cualquier tipo
+# - Uso sin consentimiento explícito del objetivo
+#
+# El autor no se responsabiliza del mal uso.
 # ==========================================================
 
 import json
