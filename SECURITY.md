@@ -243,9 +243,3 @@ LYRA cumple con:
 ---
 
 **© 2024 LYRA OSINT - Política de Seguridad v1.1**
-
----
-
-## 📁 Archivo `SECURITY.md`
-
-Este mismo contenido debe guardarse como `SECURITY.md` en la raíz del repositorio de GitHub para que GitHub lo reconozca automáticamente y lo muestre cuando alguien reporte un issue de seguridad.
