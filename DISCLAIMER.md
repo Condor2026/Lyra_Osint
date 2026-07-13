@@ -117,7 +117,7 @@ El uso de LYRA debe cumplir con:
 
 Para reportar usos indebidos o vulnerabilidades:
 
-- **Email**: [condor2026@proton.me]
+- **Email**: [En mi Readme.]
 - **GitHub**: [https://github.com/Condor2026/Lyra_Osint](https://github.com/Condor2026/Lyra_Osint)
 
 ---
