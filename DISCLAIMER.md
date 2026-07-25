@@ -150,4 +150,4 @@ El conocimiento y las herramientas de OSINT deben utilizarse para proteger, inve
 
 ---
 
-**© 2024 LYRA OSINT - Todos los derechos reservados.**
+**© 2026 LYRA OSINT - Todos los derechos reservados.**
