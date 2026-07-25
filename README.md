@@ -318,6 +318,7 @@ Si LYRA te ha sido útil, considera:
 **LYRA** - *"Un gran poder conlleva una gran responsabilidad"*
 
 🔗 [GitHub](https://github.com/Condor2026/Lyra_Osint) | [Reportar issue](https://github.com/Condor2026/Lyra_Osint/issues)
+
 ```
 
 ---
@@ -337,3 +338,4 @@ Si LYRA te ha sido útil, considera:
 | **Contribuciones** | Cómo colaborar |
 | **Licencia** | MIT |
 
+ 🦅 Condor2026 - Threat Security - 🦅
