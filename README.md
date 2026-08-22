@@ -1,5 +1,7 @@
 # 🔍 LYRA - Herramienta OSINT para investigadores
-REFORMANDO! 
+# REFORMANDO! PROTOTIPO DE TOOL OFFLINE! TIEMPO INDETERMINADO! 
+
+
 [![Version](https://img.shields.io/badge/version-2.0-red)](https://github.com/Condor2026/Lyra_Osint)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8+-green)](https://python.org)
