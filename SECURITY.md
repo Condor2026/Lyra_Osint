@@ -29,10 +29,8 @@ En LYRA, la seguridad y la ética son prioridades fundamentales. Si descubres un
 - Proporciona detalles suficientes para reproducir el problema.
 - Incluye versión del software, sistema operativo y pasos para reproducir.
 
-### 📧 Correo de contacto:
-```
-condor2026@proton.me
-```
+### 📧 Cómo contactar:
+Para reportar una vulnerabilidad, utiliza los canales de contacto disponibles en el README del repositorio oficial de LYRA en GitHub. No utilices los issues públicos para reportar problemas de seguridad.
 
 ### 🕐 Tiempos de respuesta:
 | Tipo de vulnerabilidad | Tiempo de respuesta | Tiempo de parche |
@@ -92,11 +90,7 @@ LYRA está diseñada **EXCLUSIVAMENTE** para fines legítimos y éticos.
 
 ### 🚨 Reporte de abuso
 
-Si tienes conocimiento de que LYRA está siendo utilizada para actividades ilegales o no éticas, repórtalo a:
-
-```
-condor2026@proton.me
-```
+Si tienes conocimiento de que LYRA está siendo utilizada para actividades ilegales o no éticas, repórtalo utilizando los canales de contacto disponibles en el README del repositorio oficial.
 
 ---
 
@@ -141,7 +135,9 @@ LYRA se distribuye bajo la **Licencia MIT**.
 ```
 MIT License
 
-Copyright (c) 2024 Condor2026
+Copyright (c) 2024     Condor2026                  🦅 - Threat Security - 🦅
+
+Lyra_Osint
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -162,31 +158,24 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-### 📌 Condiciones de la licencia:
-- **Uso**: Permitido para cualquier propósito, incluido comercial.
-- **Modificación**: Permitida, siempre que se mantenga el aviso de copyright.
-- **Distribución**: Permitida, siempre que se incluya la licencia original.
-- **Garantía**: El software se proporciona "TAL CUAL", sin garantías.
-- **Responsabilidad**: El autor no es responsable de daños derivados del uso.
-
 ---
 
 ## 📧 Contacto
 
-| Propósito | Correo | Respuesta |
-|-----------|--------|-----------|
-| Reportar vulnerabilidades | condor2026@proton.me | 24-48 horas |
-| Reportar abuso | condor2026@proton.me | 24-48 horas |
-| Sugerencias de seguridad | condor2026@proton.me | 48-72 horas |
-| Colaboraciones | condor2026@proton.me | 48-72 horas |
+| Propósito | Canal |
+|-----------|-------|
+| Reportar vulnerabilidades | A través del README del repositorio oficial |
+| Reportar abuso | A través del README del repositorio oficial |
+| Sugerencias de seguridad | A través del README del repositorio oficial |
+| Colaboraciones | A través del README del repositorio oficial |
 
-### 🔐 Clave PGP (para comunicaciones seguras)
+Para cualquier consulta relacionada con la seguridad o el uso ético de LYRA, consulta el README del repositorio oficial en GitHub, donde encontrarás la información de contacto actualizada.
 
-```
------BEGIN PGP PUBLIC KEY BLOCK-----
-[Tu clave pública PGP aquí]
------END PGP PUBLIC KEY BLOCK-----
-```
+---
+
+## 🔐 Clave PGP (para comunicaciones seguras)
+
+Si el contacto a través del README incluye una clave PGP, utilízala para comunicaciones que requieran cifrado. En caso contrario, se recomienda utilizar métodos seguros de comunicación proporcionados por el mantenedor del proyecto.
 
 ---
 
@@ -196,6 +185,7 @@ SOFTWARE.
 |---------|-------|---------|
 | 1.0 | Julio 2024 | Publicación inicial de la política de seguridad |
 | 1.1 | Julio 2024 | Añadido código de conducta |
+| 1.2 | Julio 2026 | Eliminados correos electrónicos directos; redirigido al README para contacto |
 
 ---
 
@@ -238,7 +228,11 @@ LYRA cumple con:
 
 **LYRA OSINT** - *"Un gran poder conlleva una gran responsabilidad"*
 
-🔗 [GitHub](https://github.com/Condor2026/Lyra_Osint) | 📧 [condor2026@proton.me](mailto:condor2026@proton.me)
+🔗 [GitHub - LYRA OSINT](https://github.com/Condor2026/Lyra_Osint)
+
+---
+
+**© 2024-2026 LYRA OSINT - Política de Seguridad v1.2**
 
 ---
 
