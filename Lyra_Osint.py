@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # ==========================================================
-# LYRA PRO - OSINT COMPLETO (CON MAIGRET FUNCIONAL)
-# TODAS LAS FUNCIONES - SIN ERRORES SQL - MAIGRET AUTOMÁTICO
+# LYRA PRO - OSINT COMPLETO (SIN RECUADRO EN BANNER)
 # ==========================================================
 
 import json
@@ -48,7 +47,7 @@ print(f"{Colors.CYAN}║{t.center(50)}║{Colors.RESET}")
 print(f"{Colors.CYAN}╚{'═'*50}╝{Colors.RESET}")
 
 # ==========================================================
-# CACHE (CORREGIDO)
+# CACHE
 # ==========================================================
 class Cache:
 def __init__(self):
@@ -555,10 +554,9 @@ return [
 ]
 
 # ==========================================================
-# INSTALADOR AUTOMÁTICO DE MAIGRET (SIN PIP)
+# INSTALADOR AUTOMÁTICO DE MAIGRET
 # ==========================================================
 def instalar_maigret():
-"""Instala Maigret automáticamente clonando el repositorio."""
 print(f"{Colors.YELLOW}⚠ Maigret no encontrado. Instalando automáticamente...{Colors.RESET}")
 
 venv_dir = Path("maigret_env")
@@ -589,7 +587,6 @@ if bin_path.exists():
 print(f"{Colors.GREEN}✅ Maigret instalado correctamente en: {venv_dir}{Colors.RESET}")
 return str(python_path), str(bin_path)
 else:
-# Fallback: usar python -m maigret
 result = subprocess.run([str(python_path), "-m", "maigret", "--version"], capture_output=True, text=True)
 if result.returncode == 0:
 print(f"{Colors.GREEN}✅ Maigret instalado como módulo en: {venv_dir}{Colors.RESET}")
@@ -599,7 +596,7 @@ print(f"{Colors.RED}❌ Error instalando Maigret. Intenta manualmente: pip insta
 return None, None
 
 # ==========================================================
-# USERNAME TRACKER CON MAIGRET FUNCIONAL
+# USERNAME TRACKER
 # ==========================================================
 class UsernameTracker:
 def __init__(self):
@@ -615,36 +612,26 @@ self.maigret_available, self.maigret_cmd = self._setup_maigret()
 self.sherlock_available = self._check_sherlock()
 
 def _setup_maigret(self):
-"""Configura Maigret (busca o instala automáticamente)."""
-# 1. Buscar en PATH
 maigret_path = shutil.which('maigret')
 if maigret_path:
 return True, [maigret_path]
-
-# 2. Buscar en ~/.local/bin
 local_bin = Path.home() / '.local' / 'bin' / 'maigret'
 if local_bin.exists():
 return True, [str(local_bin)]
-
-# 3. Probar ejecución directa
 try:
 subprocess.run(['maigret', '--version'], capture_output=True, timeout=5)
 return True, ['maigret']
 except:
 pass
-
-# 4. Intentar instalar automáticamente
 print(f"{Colors.YELLOW}⚠ Maigret no encontrado. Intentando instalación automática...{Colors.RESET}")
 python_path, bin_path = instalar_maigret()
 if bin_path:
 return True, [bin_path]
 elif python_path:
 return True, [python_path, '-m', 'maigret']
-
 return False, None
 
 def _check_sherlock(self):
-"""Detecta Sherlock."""
 if shutil.which('sherlock'):
 return True
 if (Path.home() / '.local' / 'bin' / 'sherlock').exists():
@@ -705,7 +692,6 @@ pass
 return None
 
 def track_maigret(self, username: str) -> Dict:
-"""Ejecuta Maigret con fallback si falla JSON."""
 if not self.maigret_available:
 return {'error': 'Maigret no está disponible. Intenta instalarlo manualmente con: pip install maigret'}
 
@@ -723,8 +709,7 @@ results = {
 'raw_output': ''
 }
 
-# Intento con JSON
-cmd = self.maigret_cmd + [username, '--json', 'full']  # 'full' es el argumento esperado
+cmd = self.maigret_cmd + [username, '--json', 'full']
 try:
 print(f"{Colors.GRAY}Ejecutando: {' '.join(cmd)}{Colors.RESET}")
 proc = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
@@ -743,22 +728,18 @@ results['found'] += 1
 cache.set(cache_key, results, 3600)
 return results
 except json.JSONDecodeError:
-# Si falla JSON, usar fallback
 pass
 else:
 results['raw_output'] = proc.stderr[:2000] if proc.stderr else proc.stdout[:2000]
 except Exception as e:
 results['raw_output'] = f"Error: {str(e)}"
 
-# Fallback: parsear salida de texto (sin --json)
 print(f"{Colors.GRAY}Fallback: parseando salida de texto...{Colors.RESET}")
 try:
 cmd = self.maigret_cmd + [username]
 proc = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
 if proc.returncode == 0:
-lines = proc.stdout.splitlines()
-for line in lines:
-# Buscar líneas con formato: "[+] Site: URL"
+for line in proc.stdout.splitlines():
 match = re.search(r'\[\+\]\s+([^:]+):\s*(https?://[^\s]+)', line)
 if match:
 site_name = match.group(1).strip()
@@ -776,7 +757,6 @@ cache.set(cache_key, results, 3600)
 return results
 
 def track_sherlock(self, username: str) -> Dict:
-"""Ejecuta Sherlock."""
 if not self.sherlock_available:
 return {'error': 'Sherlock no está instalado. Instálalo con: pip install sherlock-project'}
 
@@ -813,7 +793,6 @@ if not results['platforms']:
 results['raw_output'] = proc.stdout[:2000]
 else:
 results['raw_output'] = proc.stderr[:2000] if proc.stderr else proc.stdout[:2000]
-
 except subprocess.TimeoutExpired:
 results['error'] = 'Timeout (180s) - Sherlock tardó demasiado'
 except FileNotFoundError:
@@ -875,7 +854,7 @@ else:
 return {'error': 'No se pudo determinar el tipo'}
 
 # ==========================================================
-# INTERFAZ
+# INTERFAZ CON BANNER SIN RECUADRO
 # ==========================================================
 class LyraUI:
 def __init__(self):
@@ -886,27 +865,24 @@ def clear(self):
 os.system('clear' if os.name == 'posix' else 'cls')
 
 def banner(self):
-    total = len(self.lyra.username.platforms)
-    maigret_ok = "✅" if self.lyra.username.maigret_available else "❌"
-    sherlock_ok = "✅" if self.lyra.username.sherlock_available else "❌"
-    print(f"""
-{Colors.ORANGE}╔══════════════════════════════════════════════════════════════════╗
-{Colors.ORANGE}║{Colors.GREEN}       ██╗    ██╗   ██╗██████╗  █████╗               {Colors.ORANGE}║
-{Colors.ORANGE}║{Colors.GREEN}       ██║    ╚██╗ ██╔╝██╔══██╗██╔══██╗              {Colors.ORANGE}║
-{Colors.ORANGE}║{Colors.GREEN}       ██║     ╚████╔╝ ██████╔╝███████║              {Colors.ORANGE}║
-{Colors.ORANGE}║{Colors.GREEN}       ██║      ╚██╔╝  ██╔══██╗██╔══██║              {Colors.ORANGE}║
-{Colors.ORANGE}║{Colors.GREEN}       ███████╗  ██║   ██║  ██║██║  ██║              {Colors.ORANGE}║
-{Colors.ORANGE}║{Colors.GREEN}       ╚══════╝  ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝              {Colors.ORANGE}║
-{Colors.ORANGE}║                                                                  ║
-{Colors.ORANGE}║{Colors.CYAN}                 ✧  L Y R A  P R O  ✧                {Colors.ORANGE}║
-{Colors.ORANGE}║{Colors.YELLOW}           🔍 OSINT Ético y Funcional              {Colors.ORANGE}║
-{Colors.ORANGE}║{Colors.GRAY}                  ⚖️ Uso exclusivamente legal         {Colors.ORANGE}║
-{Colors.ORANGE}║{Colors.WHITE}         📊 {str(total).rjust(3)} sitios (motor LYRA)             {Colors.ORANGE}║
-{Colors.ORANGE}║{Colors.WHITE}         {maigret_ok} Maigret (3000+ sitios)        {Colors.ORANGE}║
-{Colors.ORANGE}║{Colors.WHITE}         {sherlock_ok} Sherlock (479 sitios)        {Colors.ORANGE}║
-{Colors.ORANGE}║{Colors.GREEN}         ✅ SIN API - SIN LOGIN - SOLO PÚBLICO      {Colors.ORANGE}║
-{Colors.ORANGE}║                                                                  ║
-{Colors.ORANGE}╚══════════════════════════════════════════════════════════════════╝{Colors.RESET}
+total = len(self.lyra.username.platforms)
+maigret_ok = "✅" if self.lyra.username.maigret_available else "❌"
+sherlock_ok = "✅" if self.lyra.username.sherlock_available else "❌"
+print(f"""
+{Colors.ORANGE}   ██╗    ██╗   ██╗██████╗  █████╗   {Colors.RESET}
+{Colors.ORANGE}   ██║    ╚██╗ ██╔╝██╔══██╗██╔══██╗  {Colors.RESET}
+{Colors.ORANGE}   ██║     ╚████╔╝ ██████╔╝███████║  {Colors.RESET}
+{Colors.ORANGE}   ██║      ╚██╔╝  ██╔══██╗██╔══██║  {Colors.RESET}
+{Colors.ORANGE}   ███████╗  ██║   ██║  ██║██║  ██║  {Colors.RESET}
+{Colors.ORANGE}   ╚══════╝  ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝  {Colors.RESET}
+
+{Colors.CYAN}              ✧  L Y R A  P R O  ✧                {Colors.RESET}
+{Colors.YELLOW}        🔍 OSINT Ético y Funcional              {Colors.RESET}
+{Colors.GRAY}            ⚖ Uso exclusivamente legal         {Colors.RESET}
+{Colors.WHITE}      📊 {str(total).rjust(3)} sitios (motor LYRA)             {Colors.RESET}
+{Colors.WHITE}      {maigret_ok} Maigret (3000+ sitios)        {Colors.RESET}
+{Colors.WHITE}      {sherlock_ok} Sherlock (479 sitios)        {Colors.RESET}
+{Colors.GREEN}      ✅ SIN API - SIN LOGIN - SOLO PÚBLICO      {Colors.RESET}
 """)
 
 def menu(self):
@@ -917,10 +893,10 @@ print(f"{Colors.CYAN}╚══════════════════�
 print(f"{Colors.ORANGE}[1]{Colors.RESET} 📱 Análisis de Teléfono")
 print(f"{Colors.ORANGE}[2]{Colors.RESET} 📧 Análisis de Email")
 print(f"{Colors.ORANGE}[3]{Colors.RESET} 🌐 Análisis de Dominio")
-print(f"{Colors.ORANGE}[4]{Colors.RESET} 👤 Username Tracking (LYRA")
-print(f"{Colors.ORANGE}[5]{Colors.RESET} ⚡ Username Tracking")
-print(f"{Colors.ORANGE}[6]{Colors.RESET} ⚡ Username Tracking")
-print(f"{Colors.ORANGE}[7]{Colors.RESET} 🤖 Análisis Automático (TODO")
+print(f"{Colors.ORANGE}[4]{Colors.RESET} 👤 Username Tracking (LYRA - {total} sitios)")
+print(f"{Colors.ORANGE}[5]{Colors.RESET} ⚡ Username Tracking (Maigret - 3000+ sitios)")
+print(f"{Colors.ORANGE}[6]{Colors.RESET} ⚡ Username Tracking (Sherlock - 479 sitios)")
+print(f"{Colors.ORANGE}[7]{Colors.RESET} 🤖 Análisis Automático")
 print(f"{Colors.ORANGE}[0]{Colors.RESET} 🚪 Salir")
 
 def phone_menu(self):
