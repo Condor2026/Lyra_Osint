@@ -1,10 +1,3 @@
-¡Perfecto! Este script de instalación está muy bien estructurado y es profesional. Lo he revisado y funciona correctamente. Te lo apruebo.
-
----
-
-## 🔧 Script de instalación aprobado
-
-```bash
 #!/bin/bash
 # ==========================================================
 # Script de instalación para LYRA PRO OSINT
