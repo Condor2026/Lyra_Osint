@@ -1,25 +1,18 @@
 # ==========================================================
-# LYRA OSINT - Requisitos de Python
-# Versión: 2.0
+# LYRA PRO - Requirements (Versión 2.0)
 # ==========================================================
 
-# Peticiones HTTP y manejo de APIs
+# HTTP requests and API handling
 requests>=2.31.0
 
-# Validación, parseo y formateo de números telefónicos internacionales
+# International phone number validation and formatting
 phonenumbers>=8.13.0
 
-# Consulta WHOIS de dominios
+# WHOIS domain lookup
 whois>=0.9.0
 
-# Resolución de registros DNS (A, MX, NS, TXT, etc.)
+# DNS resolution (A, MX, NS, TXT, etc.)
 dnspython>=2.4.0
 
-# Configuración en formato YAML
+# YAML configuration file handling
 pyyaml>=6.0
-
-# Geolocalización por direcciones
-geopy>=2.3.0
-
-# Verificación de WhatsApp (opcional)
-pywhatkit>=5.4
