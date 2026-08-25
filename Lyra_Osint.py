@@ -917,10 +917,10 @@ print(f"{Colors.CYAN}╚══════════════════�
 print(f"{Colors.ORANGE}[1]{Colors.RESET} 📱 Análisis de Teléfono")
 print(f"{Colors.ORANGE}[2]{Colors.RESET} 📧 Análisis de Email")
 print(f"{Colors.ORANGE}[3]{Colors.RESET} 🌐 Análisis de Dominio")
-print(f"{Colors.ORANGE}[4]{Colors.RESET} 👤 Username Tracking (LYRA - {total} sitios)")
-print(f"{Colors.ORANGE}[5]{Colors.RESET} ⚡ Username Tracking (Maigret - 3000+ sitios)")
-print(f"{Colors.ORANGE}[6]{Colors.RESET} ⚡ Username Tracking (Sherlock - 479 sitios)")
-print(f"{Colors.ORANGE}[7]{Colors.RESET} 🤖 Análisis Automático")
+print(f"{Colors.ORANGE}[4]{Colors.RESET} 👤 Username Tracking (LYRA")
+print(f"{Colors.ORANGE}[5]{Colors.RESET} ⚡ Username Tracking")
+print(f"{Colors.ORANGE}[6]{Colors.RESET} ⚡ Username Tracking")
+print(f"{Colors.ORANGE}[7]{Colors.RESET} 🤖 Análisis Automático (TODO")
 print(f"{Colors.ORANGE}[0]{Colors.RESET} 🚪 Salir")
 
 def phone_menu(self):
