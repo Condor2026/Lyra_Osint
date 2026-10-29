@@ -54,7 +54,7 @@ pkg install python git -y
 pip install requests phonenumbers whois dnspython pyyaml
 git clone https://github.com/Condor2026/Lyra_Osint.git
 cd Lyra_Osint
-python lyra.py
+python Lyra_Osint.py
 ```
 
 ### 💻 En Linux (Debian/Ubuntu/Kali)
@@ -64,15 +64,15 @@ sudo apt install python3 python3-pip git -y
 pip3 install requests phonenumbers whois dnspython pyyaml
 git clone https://github.com/Condor2026/Lyra_Osint.git
 cd Lyra_Osint
-python3 lyra.py
+python3 Lyra_Osint.py
 ```
 
 ### 🪟 En Windows
 ```powershell
 pip install requests phonenumbers whois dnspython pyyaml
-git clone https://github.com/Condor2026/Lyra_Osint.git
+git clone https://github.com/Condor2026/Lyra_Osint
 cd Lyra_Osint
-python lyra.py
+python Lyra_Osint.py
 ```
 
 ---
