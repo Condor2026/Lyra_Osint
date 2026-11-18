@@ -52,7 +52,7 @@ LYRA PRO ofrece **4 módulos de análisis** y **3 motores de búsqueda de userna
 pkg update && pkg upgrade -y
 pkg install python git -y
 pip install requests phonenumbers whois dnspython pyyaml
-git clone https://github.com/Condor2026/Lyra_Osint.git
+git clone https://github.com/Condor2026/Lyra_Osint
 cd Lyra_Osint
 python Lyra_Osint.py
 ```
@@ -62,7 +62,7 @@ python Lyra_Osint.py
 sudo apt update && sudo apt upgrade -y
 sudo apt install python3 python3-pip git -y
 pip3 install requests phonenumbers whois dnspython pyyaml
-git clone https://github.com/Condor2026/Lyra_Osint.git
+git clone https://github.com/Condor2026/Lyra_Osint
 cd Lyra_Osint
 python3 Lyra_Osint.py
 ```
